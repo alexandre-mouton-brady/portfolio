@@ -19,12 +19,12 @@ As for the programming itself, I have no real preference. I love them all. Some 
 ## Content thoughts
 *My first step is to think about the acutal content*
 
-  ### Routes
-  *What will be the differents pages available on my site*
+### Routes
+*What will be the differents pages available on my site*
 
-  * Home
-  * About
-  * Skills
-  * Contact
-  * Projects
-  * Law related
+* Home
+* About
+* Skills
+* Projects
+* Contact
+* Law related
