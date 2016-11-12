@@ -2,7 +2,8 @@
 This is process, the thoughts and the source code for my personal website
 
 * [Introduction](#introduction)
-* [Routes stuctures](#routes)
+* [Content thoughts](#content-thoughts)
+  * [Routes](#routes)
 
 ----
 
@@ -15,12 +16,15 @@ I'm from France, yes, however I prefer the universal goold ol' English for my da
 
 As for the programming itself, I have no real preference. I love them all. Some are ugly, some are easy. I have some facilities with front end languages such as **HTML**, **CSS** and **JavaScript**. What I really love about those three is that they are complentary and work together. Of course, libraries and framework are so damn cool. That's why I use regularly preprocessor such as [**SASS/SCSS**](http://sass-lang.com/) (the indent styled one because it's cleaner), [**JADE**](https://pugjs.org/api/getting-started.html), [**React**](https://facebook.github.io/react/), [**Vue**](https://vuejs.org/), etc.
 
-## Routes structures
-*This is the site map with all the routes accessibles*
+## Content thoughts
+*My first step is to think about the acutal content*
 
-* Home
-* About
-* Skills
-* Contact
-* Projects
-* Law related
+  ### Routes
+  *What will be the differents pages available on my site*
+
+  * Home
+  * About
+  * Skills
+  * Contact
+  * Projects
+  * Law related
