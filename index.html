@@ -23,9 +23,176 @@
 
     <link rel="author" href="humans.txt">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <style media="screen">
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      :root {
+        font-size: 16px;
+        font-family: 'Century Gothic', sans-serif;
+        color: #262630;
+      }
+
+      body {
+        margin: 0;
+        background-color: #F2F2F2;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+      }
+
+      .header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 100px;
+      }
+
+      .logo {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        letter-spacing: -7px;
+        color: #566473;
+        transition: transform 300ms ease-in-out, color 300ms ease-in-out;
+        will-change: color;
+      }
+      .logo:hover {
+        color: #F39C12;
+      }
+
+      .nav {
+        display: flex;
+        position: relative;
+      }
+      .nav__position {
+        position: absolute;
+        content: '';
+        top: calc(100% - 3px);
+        left: 0;
+        background-color: #F39C12;
+        width: auto;
+        height: 3px;
+        transition: transform 300ms ease-in-out, width 300ms ease-in-out;
+        will-change: transform, width;
+      }
+
+      .nav__item {
+        padding: 30px 20px;
+        text-transform: capitalize;
+        color: #A1B5C2;
+        position: relative;
+        display: block;
+        transition: color 300ms ease-in-out;
+      }
+
+      .nav__item--active,
+      .nav__item--hover {
+        color: #F39C12;
+      }
+
+      .banner {
+        padding: 250px 0;
+        width: 100%;
+        background-color: #54646E;
+      }
+    </style>
+
     <!-- @TODO: Add social media special format -->
   </head>
   <body>
+    <header class="header">
+      <a href="/" class="logo">
+        <span class="logo__title">AMB</span>
+      </a>
 
+      <nav role="navigation" class="nav">
+        <a href="#0" class="nav__item nav__item--active">Accueil</a>
+        <a href="#0" class="nav__item">A propos</a>
+        <a href="#0" class="nav__item">Compétences</a>
+        <a href="#0" class="nav__item">Projets</a>
+        <a href="#0" class="nav__item">Contact</a>
+        <span class="nav__position"></span>
+      </nav>
+    </header>
+
+    <div class="banner">
+
+    </div>
+
+    <main>
+
+    </main>
+
+    <script   type="text/javascript">
+      window.onload = function() {
+
+        /*-----------------------------------------------------*/
+
+        var baseUrl = location.protocol + '//' + location.host + location.pathname;
+        var link = document.querySelector('.logo');
+
+        link.href = baseUrl;
+
+        link.onclick = function(e) {
+          e.preventDefault();
+        };
+
+        /*------------------------------------------------------*/
+
+        var navItems = document.querySelectorAll('.nav__item');
+        var navPosition = document.querySelector('.nav__position');
+        var navActive = document.querySelector('.nav__item--active');
+
+        navPosition.style.width = window.getComputedStyle(navActive, null).getPropertyValue('width');
+        navPosition.style.transform = 'translateX(' + navActive.offsetLeft + 'px)';
+
+        for(var i = 0; i < navItems.length; i++) {
+
+          navItems[i].onmouseover = function() {
+            var navItemWidth = window.getComputedStyle(this, null).getPropertyValue('width');
+
+            var leftWidth = this.offsetLeft;
+
+            prop = {
+              'width': navItemWidth,
+              'left': 'translateX(' + leftWidth + 'px)'
+            };
+
+            if(!this.classList.contains('nav__item--hover')) {
+              this.classList.add('nav__item--hover');
+              navPosition.style.width = prop.width;
+              navPosition.style.transform = prop.left;
+            }
+          };
+
+          navItems[i].onmouseout = function() {
+            if(this.classList.contains('nav__item--hover')) {
+              this.classList.remove('nav__item--hover');
+              navPosition.style.width = window.getComputedStyle(navActive, null).getPropertyValue('width');
+              navPosition.style.transform = 'translateX(' + navActive.offsetLeft + 'px)';
+            }
+          };
+        }
+
+        /*------------------------------------------------------*/
+
+      };
+
+    </script>
   </body>
 </html>
