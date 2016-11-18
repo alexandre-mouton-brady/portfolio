@@ -30,273 +30,7 @@
     <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 
-    <style media="screen">
-      /* My normalize */
-      *,
-      *::after,
-      *::before {
-        box-sizing: border-box;
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-      }
-
-      :root {
-        font-size: 16px;
-        font-family: 'Century Gothic', sans-serif;
-        color: #262630;
-      }
-
-      body {
-        margin: 0;
-        background-color: #EFEFEF;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-        cursor: pointer;
-      }
-
-      /* Header */
-      .header {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 70px;
-        background-color: #FAFAFA;
-      }
-
-      .logo {
-        font-family: Helvetica, Arial, sans-serif;
-        position: relative;
-        font-weight: bold;
-        font-size: 30px;
-        color: #566473;
-        letter-spacing: -7px;
-        transition: transform 300ms ease-in-out, color 300ms ease-in-out;
-        will-change: color;
-      }
-      .logo:hover {
-        color: #424c57;
-      }
-
-      /* Desktop navigation */
-      .nav {
-        display: flex;
-        position: relative;
-      }
-
-      .nav__position {
-        position: absolute;
-        content: '';
-        top: calc(100% - 3px);
-        left: 0;
-        background-color: #F39C12;
-        width: auto;
-        height: 3px;
-        transition: transform 300ms ease-in-out, width 300ms ease-in-out;
-        will-change: transform, width;
-      }
-
-      .nav__item {
-        padding: 25px 20px;
-        text-transform: capitalize;
-        color: #A1B5C2;
-        position: relative;
-        display: block;
-        transition: color 300ms ease-in-out;
-        white-space: nowrap;
-      }
-
-      .nav__item--active,
-      .nav__item--hover {
-        color: #F39C12;
-      }
-
-      /* Mobile navigation */
-      .btn-open-nav {
-        height: 51px;
-        width: 51px;
-        position: relative;
-        display: none;
-        padding: 8px 5px;
-        flex-direction: column;
-        justify-content: space-around;
-        cursor: pointer;
-      }
-      .btn-open-nav > span {
-        width: 100%;
-        background-color: #566473;
-        height: 4px;
-        border-radius: 5px;
-      }
-
-      .btn-close-nav {
-        height: 51px;
-        width: 51px;
-        position: absolute;
-        padding: 8px 5px;
-        cursor: pointer;
-        right: 5%;
-        top: 0;
-      }
-      .btn-close-nav > span {
-        height: 100%;
-        width: 4px;
-        display: block;
-        left: calc(50% - 2px);
-        top: 0;
-        position: absolute;
-        border-radius: 5px;
-        background-color: #F39C12;
-      }
-      .btn-close-nav > span:first-child {
-        transform: rotate(45deg);
-      }
-      .btn-close-nav > span:last-child {
-        transform: rotate(-45deg);
-      }
-
-      .navigation--mobile {
-        height: 100vh;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(84, 100, 110, 1);
-        z-index: 99;
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        opacity: 0;
-        transform: scale(0);
-        transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
-        transform-origin: 90% 25px;
-        will-change: transform, opacity;
-      }
-
-      .navigation--mobile.show {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      .nav__item--mobile {
-        color: #FAFAFA;
-        font-size: 1.6rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-        width: 100%;
-        background-color: transparent;
-        will-change: background-color;
-        transition: background-color 300ms ease-in-out;
-      }
-      .nav__item--mobile:focus {
-        background-color: rgba(250, 250, 250, 0.088);
-      }
-
-      /* Main content */
-      .banner {
-        padding: 150px 0;
-        width: 100%;
-        background-color: #54646E;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-
-      .banner__headline {
-        color: #FAFAFA;
-        font-size: 3rem;
-        margin: 5px 0;
-      }
-
-      .banner__subtitle {
-        color: #A1B5C2;
-        font-size: 1.7rem;
-      }
-
-      .banner__cta {
-        background-color: #FAFAFA;
-        border-radius: 7px;
-        margin: 50px 0;
-        font-size: 2rem;
-        position: relative;
-        display: flex;
-        overflow: hidden;
-      }
-      .banner__cta > span {
-        padding: 15px 25px;
-      }
-      .banner__cta > a {
-        background-color: #A1B5C2;
-        color: #FAFAFA;
-        padding: 15px 25px;
-      }
-
-      /* Responsive */
-      @media screen and (max-width: 800px) {
-        .header {
-          padding: 0 5%;
-        }
-
-        .nav {
-          display: none;
-        }
-
-        .btn-open-nav {
-          display: flex;
-        }
-
-        .navigation--mobile {
-          display: flex;
-        }
-
-        .banner__headline {
-          font-size: 2.5rem;
-        }
-        .banner__subtitle {
-          font-size: 1.2rem;
-        }
-        .banner__cta {
-          font-size: 1.5rem;
-        }
-      }
-
-      @media screen and (max-width: 600px) {
-        .banner__headline {
-          font-size: 2.5rem;
-          text-align: center;
-        }
-        .banner__headline > span {
-          display: block;
-        }
-        .banner__subtitle {
-          font-size: 1.7rem;
-        }
-        .banner__subtitle > span:nth-child(2) {
-          display: none;
-        }
-        .banner__subtitle > span {
-          display: block;
-          text-align: center;
-        }
-        .banner__cta {
-          font-size: 1.2rem;
-        }
-        .banner__cta > span {
-          padding: 10px;
-        }
-        .banner__cta > a {
-          padding: 10px 15px;
-        }
-      }
-    </style>
-
+    <link rel="stylesheet" href="./stylesheets/main.css" media="screen">
     <!-- @TODO: Add social media special format -->
   </head>
   <body>
@@ -333,88 +67,54 @@
       </div>
     </header>
 
-    <div class="banner">
-      <h1 class="banner__headline"><span>Alexandre </span><span>Mouton-Brady</span></h1>
-      <p class="banner__subtitle"><span>Etudiant en BTS SIO</span><span> // </span><span>Développeur en devenir</span></p>
-      <div class="banner__cta">
-        <span>Construisons l'avenir ensemble</span>
-        <a href="#0">🡢</a>
+
+    <main class="main-content">
+
+      <div class="banner">
+        <h1 class="banner__headline">
+          <span>Alexandre </span>
+          <span>Mouton-Brady</span></h1>
+        <p class="banner__subtitle">
+          <span>Etudiant en BTS SIO</span>
+          <span> // </span>
+          <span>Développeur en devenir</span></p>
+        <div class="banner__cta">
+          <span>Construisons l'avenir ensemble</span>
+          <a href="#0">🡢</a>
+        </div>
       </div>
-    </div>
 
-    <main>
-
+      <div class="row">
+        <div class="row__item">
+          <figure>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298 337.4"><style>.a{fill:#EBEBEB;}.b{fill:#FFF;}</style><path d="M27.4 303.6L0.3 0h297.5l-27.1 303.6 -121.8 33.8L27.4 303.6z" fill="#E44F26"/><path d="M149 311.5l98.4-27.3 23.2-259.4H149V311.5z" fill="#F1662A"/><polygon points="149 62.1 148.9 62.1 55.7 62.1 56.6 72.1 65.7 174.7 149 174.7 149 137.4 99.8 137.4 96.4 99.3 149 99.3 " class="a"/><polygon points="107.4 223 104.8 193.3 84.6 193.3 67.4 193.3 72.6 251.8 148.9 272.9 149 272.9 149 234.1 148.9 234.2 " class="a"/><polygon points="148.9 137.4 148.9 174.7 194.8 174.7 190.4 223 148.9 234.2 148.9 272.9 225.2 251.8 225.8 245.5 234.6 147.4 235.5 137.4 225.4 137.4 " class="b"/><polygon points="148.9 62.1 148.9 85.2 148.9 99.2 148.9 99.3 238.7 99.3 238.9 99.3 239.6 90.9 241.3 72.1 242.2 62.1 " class="b"/></svg>
+          </figure>
+          <h2>Le contenu</h2>
+          <p>
+            Parcequ'il est important de ne pa se concentrer que sur le côté esthétique des choses, le fond est un aspect crucial d'un produit réussit. Ma maîtrise des mots clé et du langage HTML couplé à mes connaissances en marketing me permettent de propulsé les idées avant même qu'elles ne prennent vie.
+          </p>
+        </div>
+        <div class="row__item">
+          <figure>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298 337.3"><style>.a{fill:#EBEBEB;}</style><path d="M27.1 303.6L0.1 0h297.4l-27.1 303.6 -121.8 33.8L27.1 303.6z" fill="#1572B6"/><path d="M148.8 311.5l98.4-27.3 23.2-259.4H148.8V311.5z" fill="#33A9DC"/><g transform="translate(55 142)"><polygon points="187.2 -82.5 93.9 -82.5 93.8 -82.5 93.8 -45.3 146.5 -45.3 143.1 -7.2 93.8 -7.2 93.8 30.1 139.8 30.1 135.4 78.4 93.9 89.6 93.9 128.3 170.2 107.2 170.8 100.9 177.1 30.1 177.1 30.1 177.1 29.8 177.3 28.5 177.3 28.5 186.3 -72.6 " fill="#FFF"/><polygon points="93.9 89.6 52.4 78.4 49.7 48.7 29.6 48.7 12.4 48.7 17.6 107.2 93.8 128.3 94 128.3 94 89.5 " class="a"/><polygon points="93.9 -45.4 93.9 -59.4 93.9 -82.5 0.6 -82.5 1.5 -72.6 3.2 -53.7 4 -45.3 4.1 -45.3 93.9 -45.3 " class="a"/><polygon points="52.1 21.7 52.8 30.1 53 30.1 93.8 30.1 93.8 30 93.8 16 93.8 -7.2 49.5 -7.2 50.4 2.8 " class="a"/></g></svg>
+          </figure>
+          <h2>La forme</h2>
+          <p>
+            De la même façon qu'un livre sans couverture est déplaisant, un produit digitale ne peut pas se contenter que du contenu. De par mes aquisition en matière d'expérience utilisateur, mon goût prononcé pour le "pixel perfect" et mes connaissances en CSS, je créer des sites uniques qui sautent aux yeux.
+          </p>
+        </div>
+        <div class="row__item">
+          <figure>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298 337.4"><style>.a{fill:#EBEBEB;}</style><path d="M27.4 303.6L0.3 0h297.5l-27.1 303.6 -121.8 33.8L27.4 303.6z" fill="#E5A228"/><path d="M149 311.5l98.4-27.3 23.2-259.4H149V311.5z" fill="#F1BF26"/><polygon points="107.4 223 104.8 193.3 84.6 193.3 67.4 193.3 72.6 251.8 148.9 272.9 149 272.9 149 234.1 148.9 234.2 " class="a"/><polygon points="149 174.7 149 137.4 103.2 137.4 107.5 89.1 148.9 89.1 148.9 60.3 72.7 60.3 72.1 66.6 63.4 164.7 62.5 174.7 72.5 174.7 " class="a"/><polygon points="190.5 89.1 193.2 118.8 213.3 118.8 230.6 118.8 225.4 60.4 148.9 60.3 148.9 39.2 148.9 78 148.9 89.1 " class="a"/><polygon points="148.9 137.4 148.9 174.7 194.8 174.7 190.4 223 148.9 234.2 148.9 272.9 225.2 251.8 225.8 245.5 234.6 147.4 235.5 137.4 225.4 137.4 " fill="#FFF"/></svg>
+          </figure>
+          <h2>L'interactivité</h2>
+          <p>
+            Nous n'appelerions pas cela une expérience utilisateur, si les visiteurs n'étaient pas directement invités à interagir avec vos produits. Mon fort intéret pour les dernier framework et bibliothèque Javascript me permettent d'assembler fond et forme en amenant cette dernière touche de subtilité qui manque au site.
+          </p>
+        </div>
+      </div>
     </main>
 
-    <script   type="text/javascript">
-      window.onload = function() {
-
-        var btnOpenNav = document.querySelector('.btn-open-nav');
-        var btnCloseNav = document.querySelector('.btn-close-nav')
-        var mobileNav = document.querySelector('.navigation--mobile');
-
-        btnOpenNav.onclick = function() {
-          if(!mobileNav.classList.contains('show'))
-            mobileNav.classList.add('show');
-        };
-
-        btnCloseNav.onclick = function() {
-          if(mobileNav.classList.contains('show'))
-            mobileNav.classList.remove('show');
-        };
-
-        /*-----------------------------------------------------*/
-
-        var baseUrl = location.protocol + '//' + location.host + location.pathname;
-        var link = document.querySelector('.logo');
-
-        link.href = baseUrl;
-
-        link.onclick = function(e) {
-          e.preventDefault();
-        };
-
-        /*------------------------------------------------------*/
-
-        var navItems = document.querySelectorAll('.nav__item');
-        var navPosition = document.querySelector('.nav__position');
-        var navActive = document.querySelector('.nav__item--active');
-
-        navPosition.style.width = window.getComputedStyle(navActive, null).getPropertyValue('width');
-        navPosition.style.transform = 'translateX(' + navActive.offsetLeft + 'px)';
-
-        for(var i = 0; i < navItems.length; i++) {
-
-          navItems[i].onmouseover = function() {
-            var navItemWidth = window.getComputedStyle(this, null).getPropertyValue('width');
-
-            var leftWidth = this.offsetLeft;
-
-            prop = {
-              'width': navItemWidth,
-              'left': 'translateX(' + leftWidth + 'px)'
-            };
-
-            if(!this.classList.contains('nav__item--hover')) {
-              this.classList.add('nav__item--hover');
-              navPosition.style.width = prop.width;
-              navPosition.style.transform = prop.left;
-            }
-          };
-
-          navItems[i].onmouseout = function() {
-            if(this.classList.contains('nav__item--hover')) {
-              this.classList.remove('nav__item--hover');
-              navPosition.style.width = window.getComputedStyle(navActive, null).getPropertyValue('width');
-              navPosition.style.transform = 'translateX(' + navActive.offsetLeft + 'px)';
-            }
-          };
-        }
-
-        /*------------------------------------------------------*/
-
-      };
-
-    </script>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
