@@ -1,9 +1,19 @@
 window.onload = function() {
 
-  var mainContent = document.querySelector('.main-content');
-  var headerHeight = document.querySelector('.header').offsetHeight;
+  /*-----------------------------------------------------*/
 
-  console.log(headerHeight);
+  var mainContent = document.querySelector('.main-content');
+  var parallax = document.querySelector('.parallax');
+  var headerHeight = document.querySelector('.header').offsetHeight;
+  var bannerHeight = document.querySelector('.banner').offsetHeight;
+
+  mainContent.addEventListener('scroll', function() {
+    var opacityParallax = window.getComputedStyle(parallax, null).getPropertyValue('opacity');
+    var fromTop = this.scrollTop;
+
+    parallax.style.transform = 'translateY(' + fromTop / 5 + '%)';
+    parallax.style.opacity = 1 - fromTop / (bannerHeight - headerHeight);
+  });
 
   mainContent.style.height = 'calc(100vh - ' + headerHeight + 'px)';
 

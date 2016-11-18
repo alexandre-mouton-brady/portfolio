@@ -34,11 +34,14 @@ p {
 /* Header */
 .header {
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 0 70px;
   background-color: #FAFAFA;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  z-index: 3;
 }
 
 .logo {
@@ -176,6 +179,8 @@ p {
 .main-content {
   overflow: auto;
   height: 80vh;
+  position: relative;
+  z-index: 2;
 }
 
 .banner {
@@ -187,6 +192,11 @@ p {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.parallax {
+  position: relative;
+  will-change: transform;
 }
 
 .banner__headline {
@@ -251,6 +261,10 @@ p {
 }
 .row__item > figure > svg {
   width: 200px;
+}
+
+.space {
+  height: 100vh;
 }
 
 /* Responsive */
