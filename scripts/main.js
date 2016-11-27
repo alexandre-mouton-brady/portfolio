@@ -11,8 +11,8 @@ window.onload = function() {
     var opacityParallax = window.getComputedStyle(parallax, null).getPropertyValue('opacity');
     var fromTop = this.scrollTop;
 
-    parallax.style.transform = 'translateY(' + fromTop / 5 + '%)';
-    parallax.style.opacity = 1 - fromTop / (bannerHeight - headerHeight);
+    parallax.style.transform = 'translateY(' + fromTop / 4.5 + '%)';
+    parallax.style.opacity = 1 - fromTop / (bannerHeight - headerHeight - 120);
   });
 
   mainContent.style.height = 'calc(100vh - ' + headerHeight + 'px)';

@@ -30,6 +30,9 @@ h2 {
 p {
   margin: 15px 0;
 }
+img {
+  display: block;
+}
 
 /* Header */
 .header {
@@ -183,6 +186,7 @@ p {
   z-index: 2;
 }
 
+/* Banner */
 .banner {
   padding: 150px 0;
   width: 100%;
@@ -196,13 +200,14 @@ p {
 
 .parallax {
   position: relative;
-  will-change: transform;
+  will-change: transform, opacity;
 }
 
 .banner__headline {
   color: #FAFAFA;
   font-size: 3rem;
   margin: 5px 0;
+  line-height: 1.4em;
 }
 
 .banner__subtitle {
@@ -212,7 +217,6 @@ p {
 
 .banner__cta {
   background-color: transparent;
-  border-radius: 7px;
   margin: 50px 0;
   font-size: 2rem;
   position: relative;
@@ -222,6 +226,8 @@ p {
 .banner__cta > span {
   padding: 20px 25px;
   background-color: #FAFAFA;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 .banner__cta > a {
   background-color: #F39C12;
@@ -229,11 +235,14 @@ p {
   padding: 20px 25px;
   transition: background-color 300ms ease-in-out;
   will-change: background-color;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 .banner__cta > a:hover {
   background-color: #da8d13;
 }
 
+/* 3 main skills */
 .row {
   margin: 50px 0;
   padding: 0 5%;
@@ -244,12 +253,17 @@ p {
 }
 
 .row__item {
-  max-width: 30%;
   padding: 25px 30px;
   margin: 25px 0;
   background-color: #FAFAFA;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.26);
   border-radius: 2px;
+}
+.row__item--three {
+  max-width: 30%;
+}
+.row__item--two {
+  min-width: 45%;
 }
 .row__item > h2 {
   text-align: center;
@@ -265,6 +279,60 @@ p {
 
 .space {
   height: 100vh;
+}
+
+/* Showcase */
+.showcase {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.article {
+  flex: 1;
+  height: 300px;
+  position: relative;
+  background: #FAFAFA;
+  border: solid 1px #EEE;
+}
+.article__thumb {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.article__thumb > img {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.main-footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 300px;
+  margin-top: 200px;
+}
+.main-footer > span {
+  width: 100%;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 15px 5%;
+}
+.social {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icons > a {
+  padding: 0 10px;
 }
 
 /* Responsive */
