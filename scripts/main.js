@@ -40,10 +40,6 @@ window.onload = function() {
 
   link.href = baseUrl;
 
-  link.onclick = function(e) {
-    e.preventDefault();
-  };
-
   /*------------------------------------------------------*/
 
   var navItems = document.querySelectorAll('.nav__item');

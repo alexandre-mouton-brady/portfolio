@@ -36,3 +36,8 @@ As for the programming itself, I have no real preference. I love them all. Some 
 * Header [Logo + Navigation(Home, About, Skills, Projects, Contact)]
 * Main [Background color/image]
 * Footer [Copyright + Legal stuff link]
+
+### Problerms Encountered
+*What are the problems that I have encounteered during the devlopment*
+
+* Well here is a major problem I didn't think about by doing a full vanilla website (only HTML, CSS & JS, no libraries nor framework): Since I'm routing by folder name containing index.html files for each route, I have to recreate a different CSS & JS file for EVERY single route of my website. This is a major issues which will slow me down insanly!
