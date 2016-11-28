@@ -1,6 +1,13 @@
 window.onload = function() {
 
-  /*-----------------------------------------------------*/
+  /*-- Help me make sure the main content will be the right size for everyone --*/
+
+  var mainContent = document.querySelector('.main-content');
+  var headerHeight = document.querySelector('.header').offsetHeight;
+
+  mainContent.style.height = 'calc(100vh - ' + headerHeight + 'px)';
+
+  /*-- Simple open/close button action on mobile --*/
 
   var btnOpenNav = document.querySelector('.btn-open-nav');
   var btnCloseNav = document.querySelector('.btn-close-nav')
@@ -16,14 +23,14 @@ window.onload = function() {
       mobileNav.classList.remove('show');
   };
 
-  /*-----------------------------------------------------*/
+  /*-- Stupid useless but might keep. Transform url for home --*/
 
   var baseUrl = location.protocol + '//' + location.host + location.pathname;
   var link = document.querySelector('.logo');
 
   link.href = baseUrl;
 
-  /*------------------------------------------------------*/
+  /*-- Sleek animation of the navigation --*/
 
   var navItems = document.querySelectorAll('.nav__item');
   var navPosition = document.querySelector('.nav__position');
