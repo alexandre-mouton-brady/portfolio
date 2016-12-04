@@ -2,6 +2,13 @@ window.onload = function() {
 
   /*-----------------------------------------------------*/
 
+  var mainContent = document.querySelector('.main-content');
+  var headerHeight = document.querySelector('.header').offsetHeight;
+
+  mainContent.style.height = 'calc(100vh - ' + headerHeight + 'px)';
+
+  /*-----------------------------------------------------*/
+
   var btnOpenNav = document.querySelector('.btn-open-nav');
   var btnCloseNav = document.querySelector('.btn-close-nav')
   var mobileNav = document.querySelector('.navigation--mobile');

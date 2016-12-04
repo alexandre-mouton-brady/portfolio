@@ -218,7 +218,7 @@ img {
 
 .material-style {
   position: absolute;
-  height: 357px;
+  height: 50vh;
   left: 0;
   right: 0;
   top: 0;
@@ -227,7 +227,9 @@ img {
 }
 /* Section */
 .section {
-  margin: 50px 15%;
+  margin: 100px auto;
+  width: 70%;
+  max-width: 996px;
   padding: 75px 7%;
   background-color: #FFF;
   position: relative;
