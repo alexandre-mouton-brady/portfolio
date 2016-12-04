@@ -5,6 +5,8 @@ This is process, the thoughts and the source code for my personal website
 * [Content Thoughts](#content-thoughts)
   * [Routes](#routes)
   * [Cross pages components](#cross-pages-components)
+  * [Contact R0equired Fields](#contact-required-fields)
+* [Design Direction](#design-direction)
 * [Problems Encountered](#problems-encountered)
 
 ----
@@ -38,7 +40,28 @@ As for the programming itself, I have no real preference. I love them all. Some 
 * Main [Background color/image]
 * Footer [Copyright + Legal stuff link]
 
+### Contact Required Fields
+*Relative thoughts abour the proper way to display the contact page*
+
+As for the contact page I think I need at least:
+
+* **Name** (company or person)
+* **Email** (to reply back)
+* **Message** (object of the email)
+
+But I could also need some additional information like:
+
+* **Phone number**? It could definitely be useful, but also cause problem if that's international...
+* Split name into First **Name | Last Name** and add optionally **Company Name**
+
+## Design Direction
+*I mostly design as I code, as I've yet to prove myself in design*
+
+At first, I was trying to go for something original, something that would set me somewhat appart. But then I thought it would be *too much* to do such thing. I then processed and read a lot of design guideline and really enjoyed the Google's **Material Design** one. I've been trying to recreate some of the core feature of the language and fit them with my overall personality. It turns out pretty simple on paper, but forced me to push my limits and create interesting design (ie: the input of the contact page, the moving indicator of the navigation bar, etc.)
+
+
+
 ## Problems Encountered
 *What are the problems that I have encounteered during the devlopment*
 
-* Well here is a major problem I didn't think about by doing a full vanilla website (only HTML, CSS & JS, no libraries nor framework): Since I'm routing by folder name containing index.html files for each route, I have to recreate a different CSS & JS file for EVERY single route of my website. This is a major issues which will slow me down insanly!                
+* Well here is a major problem I didn't think about by doing a full vanilla website (only HTML, CSS & JS, no libraries nor framework): Since I'm routing by folder name containing index.html files for each route, I have to recreate a different CSS & JS file for EVERY single route of my website. This is a major issues which will slow me down insanly!

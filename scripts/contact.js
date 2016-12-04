@@ -1,5 +1,37 @@
 window.onload = function() {
 
+  var input = document.querySelectorAll('input');
+
+  for(var i = 0; i < input.length; i++) {
+    input[i].addEventListener('focus', focus, false);
+    input[i].addEventListener('blur', focus, false);
+  }
+
+  function focus(e) {
+    var parent = e.target.parentElement;
+    var brother = e.target.previousElementSibling;
+
+    if (parent.classList.contains('focused') && brother.classList.contains('active')) {
+      parent.classList.remove('focused');
+      if (e.target.value === '')
+        brother.classList.remove('active', 'active-color');
+      else
+        brother.classList.remove('active-color');
+    } else {
+      parent.classList.add('focused');
+      brother.classList.add('active', 'active-color');
+    }
+  }
+
+  /*-----------------------------------------------------*/
+
+  /*-- Help me make sure the main content will be the right size for everyone --*/
+
+  var mainContent = document.querySelector('.main-content');
+  var headerHeight = document.querySelector('.header').offsetHeight;
+
+  mainContent.style.height = 'calc(100vh - ' + headerHeight + 'px)';
+
   /*-----------------------------------------------------*/
 
   var btnOpenNav = document.querySelector('.btn-open-nav');
