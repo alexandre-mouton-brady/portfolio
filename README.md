@@ -5,7 +5,7 @@ This is process, the thoughts and the source code for my personal website
 * [Content Thoughts](#content-thoughts)
   * [Routes](#routes)
   * [Cross pages components](#cross-pages-components)
-  * [Contact R0equired Fields](#contact-required-fields)
+  * [Contact Required Fields](#contact-required-fields)
 * [Design Direction](#design-direction)
 * [Problems Encountered](#problems-encountered)
 
