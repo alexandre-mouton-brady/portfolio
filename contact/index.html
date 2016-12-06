@@ -68,25 +68,41 @@
 
   <main class="main-content">
     <section class="section">
-      <form>
-        <div class="input">
-          <label>Nom</label>
-          <input type="text">
+      <form method="post" class="myForm">
+        <div class="material-input">
+          <label for="lastName" class="label">Nom *</label>
+          <input required="true" type="text" name="lastName" id="lastName" class="input">
         </div>
-        <div class="input">
-          <label>Prénom</label>
-          <input type="text">
+        <div class="material-input">
+          <label for="firstName" class="label">Organisation (<em>optionnel</em>)</label>
+          <input type="text" name="firstName" id="firstName" class="input">
         </div>
-        <div class="input">
-          <label>Email</label>
-          <input type="text">
+        <div class="material-input">
+          <label for="email" class="label">Email *</label>
+          <input required="true" type="email" name="email" id="email" class="input">
         </div>
-        <div class="input">
-          <label>Message</label>
-          <input type="text">
+        <div class="material-input">
+          <label for="message" class="label">Message *</label>
+          <textarea required="true" class="input" name="message" id="message"></textarea>
         </div>
+        <button class="btn btn--blue" type="submit" name="button">Validé</button>
       </form>
     </section>
+
+    <footer class="main-footer">
+      <div class="social">
+        <p>Vous pouvez me retrouver sur les réseaux sociaux</p>
+        <div class="icons">
+          <a href="#">Twitter</a>|
+          <a href="#">Instagram</a>|
+          <a href="#">Flickr</a>|
+          <a href="#">LinkedIn</a>|
+          <a href="#">GitHub</a>|
+          <a href="#">CodePen</a>
+        </div>
+      </div>
+      <span>&copy; 2016. Tous droits réservés. Alexandre Mouton-Brady.</span>
+    </footer>
   </main>
 
 

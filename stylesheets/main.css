@@ -292,7 +292,6 @@ img {
   height: 300px;
   position: relative;
   background: #FAFAFA;
-  border: solid 1px #EEE;
   overflow: hidden;
 }
 .article__thumb {
@@ -309,23 +308,23 @@ img {
   display: block;
 }
 
+/* Footer */
 .main-footer {
-  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: space-between;
-  height: 300px;
-  margin-top: 200px;
+  margin-top: 100px;
+  padding: 0 15%;
+  background-color: rgba(0, 0, 0, 0.02);
 }
 .main-footer > span {
   width: 100%;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.1);
   display: block;
   color: rgba(0, 0, 0, 0.6);
-  padding: 15px 5%;
+  padding: 15px 0;
 }
 .social {
   margin: 30px 0;

@@ -1,0 +1,17 @@
+# TEAM
+
+    Alexandre Mouton-Brady -- Développeur et Designer -- @AwesomeAlexDev
+
+# THANKS
+
+    BTS SIO de Saint-Gabriel (Bagneux)
+    reddit/r/webdev
+    reddit/r/web_design
+    css-trick
+    youtube.com/user/DevTipsForDesigners
+    Steve Jobs
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, JavaScript
+    Normalize.css
