@@ -9,15 +9,16 @@ window.onload = function() {
   var headerHeight = document.querySelector('.header').offsetHeight;
   var bannerHeight = document.querySelector('.banner').offsetHeight;
 
+  mainContent.style.height = 'calc(100vh - ' + headerHeight + 'px)';
+
   mainContent.addEventListener('scroll', function() {
     var opacityParallax = window.getComputedStyle(parallax, null).getPropertyValue('opacity');
     var fromTop = this.scrollTop;
-
+    
     parallax.style.transform = 'translateY(' + fromTop / 4.5 + '%)';
     parallax.style.opacity = 1 - fromTop / (bannerHeight - headerHeight - 120);
   });
 
-  mainContent.style.height = 'calc(100vh - ' + headerHeight + 'px)';
 
   /*-----------------------------------------------------*/
 
@@ -43,7 +44,7 @@ window.onload = function() {
 
   navPosition.style.width = navActive.offsetWidth + 'px';
   navPosition.style.transform = 'translateX(' + navActive.offsetLeft + 'px)';
-  
+
   var i;
   var l = navItems.length;
   for(i = 0; i < l; i++) {
