@@ -8,13 +8,17 @@ window.onload = function() {
   var parallax = document.querySelector('.parallax');
   var headerHeight = document.querySelector('.header').offsetHeight;
   var bannerHeight = document.querySelector('.banner').offsetHeight;
+  var navMobile = document.querySelector('.navigation--mobile');
+
+  navMobile.style.height = 'calc(100vh - ' + headerHeight + 'px)';
+  navMobile.style.top = headerHeight + 'px';
 
   mainContent.style.height = 'calc(100vh - ' + headerHeight + 'px)';
 
   mainContent.addEventListener('scroll', function() {
     var opacityParallax = window.getComputedStyle(parallax, null).getPropertyValue('opacity');
     var fromTop = this.scrollTop;
-    
+
     parallax.style.transform = 'translateY(' + fromTop / 4.5 + '%)';
     parallax.style.opacity = 1 - fromTop / (bannerHeight - headerHeight - 120);
   });
@@ -23,16 +27,12 @@ window.onload = function() {
   /*-----------------------------------------------------*/
 
   var btnOpenNav = document.querySelector('.btn-open-nav');
-  var btnCloseNav = document.querySelector('.btn-close-nav')
   var mobileNav = document.querySelector('.navigation--mobile');
 
   btnOpenNav.onclick = function() {
     if(!mobileNav.classList.contains('show'))
       mobileNav.classList.add('show');
-  };
-
-  btnCloseNav.onclick = function() {
-    if(mobileNav.classList.contains('show'))
+    else
       mobileNav.classList.remove('show');
   };
 
