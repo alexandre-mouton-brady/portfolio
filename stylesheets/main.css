@@ -17,7 +17,7 @@ html {
 body {
   margin: 0;
   background-color: #EFEFEF;
-  font-family: roboto, helvetica, arial, sans-serif;
+  font-family: Roboto, helvetica, arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #333;
@@ -177,7 +177,7 @@ svg:not(:root) {
 .banner {
   padding: 150px 0;
   width: 100%;
-  background: linear-gradient(145deg, #0D47A1, #42A5F5);
+  background-image: linear-gradient(145deg, #0D47A1, #42A5F5);
   overflow: hidden;
 }
 
