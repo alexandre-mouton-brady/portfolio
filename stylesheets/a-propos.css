@@ -10,6 +10,7 @@
 html {
   font-size: 16px;
   line-height: 1.15;
+  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -34,12 +35,6 @@ a:active,
 a:focus,
 button:focus {
   outline-width: 0;
-}
-h2 {
-  margin: 20px 0;
-}
-p {
-  margin: 15px 0;
 }
 img {
   display: block;
@@ -87,6 +82,7 @@ svg:not(:root) {
   top: calc(100% - 2px);
   left: 0;
   background-color: #FAFAFA;
+  transform: translateX(104px);
   width: auto;
   height: 2px;
   transition: transform 300ms ease-in-out, width 300ms ease-in-out;
@@ -103,7 +99,7 @@ svg:not(:root) {
   white-space: nowrap;
 }
 
-.nav__item--hover,
+.nav__item:hover,
 .logo:hover {
   background-color: #1E88E5;
 }
@@ -165,11 +161,10 @@ svg:not(:root) {
   background-color: rgba(250, 250, 250, 0.088);
 }
 
-/* main */
 /* Main content */
 .main-content {
   overflow: auto;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 64px);
   position: relative;
   z-index: 2;
 }
@@ -237,9 +232,9 @@ svg:not(:root) {
 /* Section */
 .section {
   margin: 130px auto;
-  width: 70%;
-  max-width: 996px;
-  padding: 75px 7%;
+  width: 100%;
+  max-width: 902px;
+  padding: 75px;
   background-color: #FFF;
   border-radius: 2px;
   position: relative;
@@ -252,6 +247,7 @@ svg:not(:root) {
   right: 10%;
   height: 75px;
   width: 75px;
+  display: none;
   background-color: #EEE;
   border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
@@ -266,17 +262,18 @@ svg:not(:root) {
 
 .m-style-paragraph {
   margin-top: 25px;
-  font-size: 18px;
-  line-height: 1.6em;
+  font-size: 21px;
+  line-height: 1.6;
   letter-spacing: -0.003em;
 }
 .m-style-header {
-  font-weight: 700;
-  font-size: 32px;
-  margin-left: -2px;
-  line-height: 1.2em;
-  margin-bottom: 50px;
-  letter-spacing: -0.02em;
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: -2.5px;
+  font-family: Roboto, helvetica, arial, sans-serif;
+  line-height: 1.04;
+  /*margin-top: 39px;*/
+  letter-spacing: -0.028em;
 }
 
 /* Responsive */
@@ -295,5 +292,27 @@ svg:not(:root) {
 
   .navigation--mobile {
     display: flex;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 32px 20px;
+    margin-bottom: 0;
+  }
+  .m-style-paragraph {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 1.65;
+    letter-spacing: -0.004em;
+  }
+  .m-style-header {
+    font-weight: 700;
+    font-size: 32px;
+    margin-left: -2px;
+    line-height: 1.04;
+    letter-spacing: -0.028em;
+  }
+  .main-footer {
+    margin: 0;
   }
 }

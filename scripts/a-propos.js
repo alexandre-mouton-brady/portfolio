@@ -6,6 +6,7 @@ window.onload = function() {
   var navMobile = document.querySelector('.navigation--mobile');
 
   navMobile.style.height = 'calc(100vh - ' + headerHeight + 'px)';
+  mainContent.style.height = 'calc(100vh - '+ headerHeight + 'px)';
   navMobile.style.top = headerHeight + 'px';
 
   /*-- Simple open/close button action on mobile --*/
@@ -24,6 +25,7 @@ window.onload = function() {
   var navItems = document.querySelectorAll('.nav__item');
   var navPosition = document.querySelector('.nav__position');
   var navActive = document.querySelector('.nav__item--active');
+
 
   navPosition.style.width = navActive.offsetWidth + 'px';
   navPosition.style.transform = 'translateX(' + navActive.offsetLeft + 'px)';
