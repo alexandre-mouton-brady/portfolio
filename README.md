@@ -7,6 +7,7 @@ This is process, the thoughts and the source code for my personal website
   * [Cross pages components](#cross-pages-components)
   * [Contact Required Fields](#contact-required-fields)
 * [Design Direction](#design-direction)
+* [Production](#production)
 * [Thoughts for the future](#thoughts-for-the-future)
 * [Problems Encountered](#problems-encountered)
 
@@ -60,13 +61,23 @@ But I could also need some additional information like:
 
 At first, I was trying to go for something original, something that would set me somewhat appart. But then I thought it would be *too much* to do such thing. I then processed and read a lot of design guideline and really enjoyed the Google's **Material Design** one. I've been trying to recreate some of the core feature of the language and fit them with my overall personality. It turns out pretty simple on paper, but forced me to push my limits and create interesting design (ie: the input of the contact page, the moving indicator of the navigation bar, etc.)
 
+## Production
+*How did I went from dev to prod*
+
+* CSS: Passed the stylesheet to [cssnext autoprefixer CLI](https://github.com/postcss/autoprefixer), then [cleancss CLI](https://github.com/jakubpawlowicz/clean-css) and finally I've been inline the minify and auto prefixed result into the HTML
+* JS: Passed the scripts to [uglifyJS CLI](https://github.com/mishoo/UglifyJS2)
+* Images: Resized with PhotoShop and compressed with [Optimizilla](http://optimizilla.com/)
+* HTML: Minified with [html-minifier web interface](http://kangax.github.io/html-minifier/)
+
+I also included the [HTML5 BoilerPlate](https://html5boilerplate.com/) .htaccess for better redirection and gzip enabled.
+
 ## Thoughts for the future
 *What are the lessons I can learn from it for the future based on the prolems I got*
 
-* Well on thing for sure is that vanilla JS/HTML/CSS is a lot of fun as you know it will work right off the bat. However it imply a lot of downside. I never will use such basic developpemùent environnement for the sole reason that it takes so much time.
+* Well on thing for sure is that vanilla JS/HTML/CSS is a lot of fun, mainly because you know everything will work right off the bat. However it imply a lot of downside. I will never use such basic developpement environnement for the sole reason that it takes so much time, unless it's a single page website (not SPA).
 * I'm thinking of redoing my portfolio entirely in a front-end JavaScript framework and see if it actually makes things better. Here are my top contender:
-  * [Vue.js](https://vuejs.org/): really versatile, easy and I'm quite familiar with it already
-  * [Inferno.js](https://github.com/trueadm/inferno): much more complicated to use and develop with from a beginner perspective as it is a react like library. However it's not some random React library, it's the **fastest and lightest** in the world with only 13kb for the basic package. That's dope!
+  * [Vue.js](https://vuejs.org/) - really versatile, easy and I'm quite familiar with it already
+  * [Inferno.js](https://github.com/trueadm/inferno) - much more complicated to use and develop with from a beginner perspective as it is a react like library. However it's not some random react clone, it's the **fastest and lightest** in the world with only 13kb for the basic package. That's dope!
 
 ## Problems Encountered
 *What are the problems that I have encounteered during the devlopment - Fiou -*
@@ -78,3 +89,8 @@ At first, I was trying to go for something original, something that would set me
   * Minify the CSS for each page to include it into the head. Since they are relatively small files, I can inline the CSS. This allows me to avoid FOIT (Flash Of Invisible Text) and give me better result for SEO.
   * I have to repeat the process for JavaScript, only I don't have to inline it in the HTML since I still can defer / async the scripts for it to be parsed at the end of the document.
   * Finally I have to modify all the links for it to match the real world adress and not the developpement environnement anymore.
+
+* I can see a lot of inconsistency across the pages
+* Making the scroll bar in a <main></main> wasn't such a good idea as it is **NOT** compatible with IE... Fuck you IE.
+* I also have a weird issue where my mobile nav doesn't seem to be flex and so the logo and the menu are next to each other which leads to an issue on [Google Insight Page Speed Test](https://developers.google.com/speed/pagespeed/insights/)
+* One last issue for now is the https which somehow won't enable. But it's more of hosting provider issue

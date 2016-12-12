@@ -213,6 +213,38 @@ svg:not(:root) {
   width: 40%;
   overflow: hidden;
 }
+.article--right > a {
+  width: 100%;
+  position: relative;
+  display: block;
+  z-index: 2;
+}
+.article--right > a > i {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background: rgba(50, 50, 50, 0.85);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 300ms ease-in-out;
+}
+.article--right svg {
+  height: 40px;
+  width: 40px;
+}
+.article--right path {
+  fill: #EEE;
+}
+.article--right > a:hover > i {
+  opacity: 1;
+}
+.article--right > a > img,
 .article--right > img {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -239,15 +271,17 @@ svg:not(:root) {
 }
 .social {
   margin: 30px 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .icons {
   display: flex;
-}
-.icons > a {
-  padding: 15px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 370px;
+  margin-top: 25px;
 }
 .icons svg {
   height: 30px;
@@ -317,6 +351,11 @@ svg:not(:root) {
   .section {
     padding: 32px 20px;
     margin-bottom: 0;
+  }
+  .material-style > h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 41px 0;
   }
   .main-footer {
     margin: 0;

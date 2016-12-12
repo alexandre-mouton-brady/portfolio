@@ -43,6 +43,7 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+
 /* Header */
 .header {
   display: flex;
@@ -82,7 +83,7 @@ svg:not(:root) {
   top: calc(100% - 2px);
   left: 0;
   background-color: #FAFAFA;
-  transform: translateX(104px);
+  transform: translateX(220px);
   width: auto;
   height: 2px;
   transition: transform 300ms ease-in-out, width 300ms ease-in-out;
@@ -190,15 +191,17 @@ svg:not(:root) {
 }
 .social {
   margin: 30px 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .icons {
   display: flex;
-}
-.icons > a {
-  padding: 15px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 370px;
+  margin-top: 25px;
 }
 .icons svg {
   height: 30px;
@@ -241,39 +244,27 @@ svg:not(:root) {
   border: solid 1px rgba(0, 0, 0, 0.1);
   /*box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.26);*/
 }
-.headshot {
-  position: absolute;
-  top: 50px;
-  right: 10%;
-  height: 75px;
-  width: 75px;
-  display: none;
-  background-color: #EEE;
+.section__item {
+  margin: 65px 0;
+}
+.section__item:first-child {
+  margin-top: 0;
+}
+.section__item:last-child {
+  margin-bottom: 0;
+}
+.skill__number {
+  border: 3px solid #333;
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-}
-
-@supports (hyphens: auto) {
-  .section > p {
-    hyphens: auto;
-    text-align: justify;
-  }
-}
-
-.m-style-paragraph {
-  margin-top: 25px;
-  font-size: 21px;
-  line-height: 1.6;
-  letter-spacing: -0.003em;
-}
-.m-style-header {
-  font-weight: bold;
   font-size: 40px;
-  margin-left: -2.5px;
-  font-family: Roboto, helvetica, arial, sans-serif;
-  line-height: 1.04;
-  /*margin-top: 39px;*/
-  letter-spacing: -0.028em;
+  font-weight: normal;
+  height: 50px;
+  width: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+  transform: translateY(-10px);
 }
 
 /* Responsive */
@@ -294,23 +285,16 @@ svg:not(:root) {
     display: flex;
   }
 }
+
 @media screen and (max-width: 767px) {
   .section {
     padding: 32px 20px;
     margin-bottom: 0;
   }
-  .m-style-paragraph {
-    margin-top: 15px;
-    font-size: 18px;
-    line-height: 1.65;
-    letter-spacing: -0.004em;
-  }
-  .m-style-header {
-    font-weight: 700;
-    font-size: 32px;
-    margin-left: -2px;
-    line-height: 1.04;
-    letter-spacing: -0.028em;
+  .material-style > h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 41px 0;
   }
   .main-footer {
     margin: 0;

@@ -30,20 +30,11 @@ a {
   -webkit-text-decoration-skip: objects;
   cursor: pointer;
 }
-button {
-  border: 0;
-}
 a:hover,
 a:active,
 a:focus,
 button:focus {
   outline-width: 0;
-}
-h1 {
-  margin-bottom: 15px;
-}
-p {
-  margin-bottom: 10px;
 }
 img {
   display: block;
@@ -51,10 +42,7 @@ img {
 svg:not(:root) {
   overflow: hidden;
 }
-input:required:invalid {
-  outline: none;
-  box-shadow: none;
-}
+
 /* Header */
 .header {
   display: flex;
@@ -94,7 +82,7 @@ input:required:invalid {
   top: calc(100% - 2px);
   left: 0;
   background-color: #FAFAFA;
-  transform: translateX(481px);
+  transform: translateX(104px);
   width: auto;
   height: 2px;
   transition: transform 300ms ease-in-out, width 300ms ease-in-out;
@@ -181,19 +169,6 @@ input:required:invalid {
   z-index: 2;
 }
 
-/* section */
-.section {
-  margin: 130px auto;
-  width: 100%;
-  max-width: 902px;
-  background-color: #FFF;
-  border-radius: 2px;
-  position: relative;
-  padding: 75px;
-  border: solid 1px rgba(0, 0, 0, 0.1);
-  /*box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.26);*/
-}
-
 /* Footer */
 .main-footer {
   overflow: hidden;
@@ -215,15 +190,17 @@ input:required:invalid {
 }
 .social {
   margin: 30px 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .icons {
   display: flex;
-}
-.icons > a {
-  padding: 15px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 370px;
+  margin-top: 25px;
 }
 .icons svg {
   height: 30px;
@@ -254,72 +231,51 @@ input:required:invalid {
   margin: 25px 0;
   font-size: 3rem;
 }
-
-.myForm {
-  display: flex;
-  flex-flow: column wrap;
-}
-.material-input {
+/* Section */
+.section {
+  margin: 130px auto;
   width: 100%;
+  max-width: 902px;
+  padding: 75px;
+  background-color: #FFF;
+  border-radius: 2px;
   position: relative;
-  margin: 20px 0;
-  display: flex;
-  flex-flow: column wrap;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.26);*/
 }
-.material-input > textarea {
-  height: 200px;
-  resize: none;
-}
-.input {
-  border: 0;
-  outline: 0;
-  padding: 5px 5px 10px;
-  position: relative;
-  background-color: transparent;
-  font-size: 16px;
-  font-family: inherit;
-  width: 100%;
-  z-index: 2;
-}
-.label {
-  position: relative;
-  transform: translate(5px, calc(100% + 10px)) scale(1);
-  color: rgba(0, 0, 0, 0.5);
-  transform-origin: bottom left;
-  z-index: 1;
-  width: calc(100% - 5px);
-  display: inline-block;
-  cursor: pointer;
-  font-size: 16px;
-  will-change: color, transform, font-size;
-  transition: color 250ms cubic-bezier(.25,.1,.25,1), transform 250ms cubic-bezier(.25,.1,.25,1), font-size 250ms cubic-bezier(.25,.1,.25,1);
-}
-.label.active {
-  transform: translate(0, 0);
-}
-.label.active-color {
-  color: #3f51b5;
-}
-.label.error-color {
-  color: #f44336;
-}
-.material-input::before {
+.headshot {
   position: absolute;
-  content: '';
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.26);
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  will-change: background-color;
-  transition: background-color 250ms cubic-bezier(.25,.1,.25,1);
+  top: 50px;
+  right: 10%;
+  height: 75px;
+  width: 75px;
+  display: none;
+  background-color: #EEE;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
-.focused::before {
-  background-color: #3f51b5;
+
+@supports (hyphens: auto) {
+  .section > p {
+    hyphens: auto;
+    text-align: justify;
+  }
 }
-.mandatory::before {
-  background-color: #f44336;
+
+.m-style-paragraph {
+  margin-top: 25px;
+  font-size: 21px;
+  line-height: 1.6;
+  letter-spacing: -0.003em;
+}
+.m-style-header {
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: -2.5px;
+  font-family: Roboto, helvetica, arial, sans-serif;
+  line-height: 1.04;
+  /*margin-top: 39px;*/
+  letter-spacing: -0.028em;
 }
 .btn {
   padding: 10px 15px;
@@ -370,11 +326,28 @@ input:required:invalid {
     display: flex;
   }
 }
-
 @media screen and (max-width: 767px) {
   .section {
     padding: 32px 20px;
     margin-bottom: 0;
+  }
+  .material-style > h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 41px 0;
+  }
+  .m-style-paragraph {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 1.65;
+    letter-spacing: -0.004em;
+  }
+  .m-style-header {
+    font-weight: 700;
+    font-size: 32px;
+    margin-left: -2px;
+    line-height: 1.04;
+    letter-spacing: -0.028em;
   }
   .main-footer {
     margin: 0;
